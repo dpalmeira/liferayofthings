@@ -16,7 +16,7 @@
 	<name>Ext Multi Project</name>
 
     <modules>
-        <module>liferay-portal</module>
+        <!--<module>liferay-portal</module>-->
     </modules>
 
 </project>
