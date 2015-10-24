@@ -1,0 +1,9 @@
+###############################################
+######          fitbit PORTLET           ######
+###############################################
+
+javax.portlet.title=Fitbit
+javax.portlet.description=Fitbit Integration Portlet.
+
+# Common
+fitbit.authorize-access=Authorize Access

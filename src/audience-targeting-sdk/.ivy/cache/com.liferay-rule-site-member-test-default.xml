@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="com.liferay"
+		module="rule-site-member-test"
+		revision="working@julio.liferay.org.es"
+		conf="default"
+		confs="default"
+		date="20140922131717"/>
+	<dependencies>
+	</dependencies>
+</ivy-report>

@@ -1,0 +1,17 @@
+/*/bin
+/*/classes
+/*/ivy.xml.MD5
+/*/javadoc
+/*/lib
+/*/test-classes
+/*/test-results
+
+/*/docroot/WEB-INF/classes
+/*/docroot/WEB-INF/lib
+/*/docroot/WEB-INF/liferay-hook.xml.processed
+
+/ivy.idea.properties
+
+.idea/workspace.xml
+.idea/rebel_project.xml
+.idea/dataSources.*

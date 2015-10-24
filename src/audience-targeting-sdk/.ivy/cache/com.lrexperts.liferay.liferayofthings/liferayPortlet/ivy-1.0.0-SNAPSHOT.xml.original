@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.lrexperts.liferay.liferayofthings</groupId>
+        <artifactId>liferayPlugin</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+	<artifactId>liferayPortlet</artifactId>
+	<packaging>pom</packaging>
+	<name>Portlet Multi Project</name>
+
+	<modules>
+		<module>portlet-library</module>
+		<module>liferayofthings-core</module>
+  </modules>
+
+	<build>
+		<finalName>${project.artifactId}</finalName>
+		<pluginManagement>
+			<plugins>
+				<!-- PMD Plugin launch on build -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-pmd-plugin</artifactId>
+					<version>${maven-pmd-plugin.version}</version>
+	                <configuration>
+	                    <!-- If true compilation will fail if exist PMD violations  -->
+	                    <failOnViolation>true</failOnViolation>
+	                    <rulesets>
+	                        <ruleset>${liferay.qa.rules}pmd.xml</ruleset>
+	                    </rulesets>
+	                    <linkXref>false</linkXref>
+	                    <minimumTokens>2</minimumTokens>
+	                    <sourceEncoding>UTF-8</sourceEncoding>
+	                    <targetJdk>1.7</targetJdk>
+	                    <excludes>
+	                        <exclude>**/model/*</exclude>
+	                        <exclude>**/service/*</exclude>
+	                    </excludes>
+	                </configuration>
+					<executions>
+						<execution>
+							<goals>
+								<goal>check</goal>
+								<goal>pmd</goal>
+							</goals>
+							<phase>validate</phase>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
+	                <groupId>org.apache.maven.plugins</groupId>
+	                <artifactId>maven-jxr-plugin</artifactId>
+	                <version>${maven-jxr-plugin.version}</version>
+	            </plugin>
+	            <!-- Checkstyle rules on build -->
+				<plugin>
+			        <groupId>org.apache.maven.plugins</groupId>
+			        <artifactId>maven-checkstyle-plugin</artifactId>
+			        <version>${maven-checkstyle-plugin}</version>
+			        <configuration>
+			            <!-- If true compilation will fail if exist CHECKSTYLE violations  -->
+	                    <failOnViolation>true</failOnViolation>
+	                    <excludes>*.properties,**/model/*,**/service/*,**/com/liferay/*</excludes>
+						<configLocation>${liferay.qa.rules}checkstyle.xml</configLocation>
+	                </configuration>
+			        <executions>
+						<execution>
+							<goals>
+								<goal>check</goal>
+								<goal>checkstyle</goal>
+							</goals>	
+							<phase>validate</phase>
+						</execution>
+					</executions>
+			    </plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>liferay</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<build>
+				<finalName>${project.artifactId}</finalName>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-war-plugin</artifactId>
+						<version>${plugin.version.war}</version>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+</project>

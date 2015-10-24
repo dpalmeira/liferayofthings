@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.lrexperts.liferay.liferayofthings.service.ActuatorLocalService" class="com.lrexperts.liferay.liferayofthings.service.impl.ActuatorLocalServiceImpl" />
+	<bean id="com.lrexperts.liferay.liferayofthings.service.ActuatorService" class="com.lrexperts.liferay.liferayofthings.service.impl.ActuatorServiceImpl" />
+	<bean id="com.lrexperts.liferay.liferayofthings.service.persistence.ActuatorPersistence" class="com.lrexperts.liferay.liferayofthings.service.persistence.ActuatorPersistenceImpl" parent="basePersistence" />
+	<bean id="com.lrexperts.liferay.liferayofthings.service.ActuatorTypeLocalService" class="com.lrexperts.liferay.liferayofthings.service.impl.ActuatorTypeLocalServiceImpl" />
+	<bean id="com.lrexperts.liferay.liferayofthings.service.ActuatorTypeService" class="com.lrexperts.liferay.liferayofthings.service.impl.ActuatorTypeServiceImpl" />
+	<bean id="com.lrexperts.liferay.liferayofthings.service.persistence.ActuatorTypePersistence" class="com.lrexperts.liferay.liferayofthings.service.persistence.ActuatorTypePersistenceImpl" parent="basePersistence" />
+	<bean id="com.lrexperts.liferay.liferayofthings.service.SensorLocalService" class="com.lrexperts.liferay.liferayofthings.service.impl.SensorLocalServiceImpl" />
+	<bean id="com.lrexperts.liferay.liferayofthings.service.SensorService" class="com.lrexperts.liferay.liferayofthings.service.impl.SensorServiceImpl" />
+	<bean id="com.lrexperts.liferay.liferayofthings.service.persistence.SensorPersistence" class="com.lrexperts.liferay.liferayofthings.service.persistence.SensorPersistenceImpl" parent="basePersistence" />
+	<bean id="com.lrexperts.liferay.liferayofthings.service.SensorTypeLocalService" class="com.lrexperts.liferay.liferayofthings.service.impl.SensorTypeLocalServiceImpl" />
+	<bean id="com.lrexperts.liferay.liferayofthings.service.SensorTypeService" class="com.lrexperts.liferay.liferayofthings.service.impl.SensorTypeServiceImpl" />
+	<bean id="com.lrexperts.liferay.liferayofthings.service.persistence.SensorTypePersistence" class="com.lrexperts.liferay.liferayofthings.service.persistence.SensorTypePersistenceImpl" parent="basePersistence" />
+	<bean id="com.lrexperts.liferay.liferayofthings.service.SensorValueLocalService" class="com.lrexperts.liferay.liferayofthings.service.impl.SensorValueLocalServiceImpl" />
+	<bean id="com.lrexperts.liferay.liferayofthings.service.SensorValueService" class="com.lrexperts.liferay.liferayofthings.service.impl.SensorValueServiceImpl" />
+	<bean id="com.lrexperts.liferay.liferayofthings.service.persistence.SensorValuePersistence" class="com.lrexperts.liferay.liferayofthings.service.persistence.SensorValuePersistenceImpl" parent="basePersistence" />
+	<bean id="com.lrexperts.liferay.liferayofthings.service.ThingLocalService" class="com.lrexperts.liferay.liferayofthings.service.impl.ThingLocalServiceImpl" />
+	<bean id="com.lrexperts.liferay.liferayofthings.service.ThingService" class="com.lrexperts.liferay.liferayofthings.service.impl.ThingServiceImpl" />
+	<bean id="com.lrexperts.liferay.liferayofthings.service.persistence.ThingPersistence" class="com.lrexperts.liferay.liferayofthings.service.persistence.ThingPersistenceImpl" parent="basePersistence" />
+	<bean id="com.lrexperts.liferay.liferayofthings.service.ThingGroupLocalService" class="com.lrexperts.liferay.liferayofthings.service.impl.ThingGroupLocalServiceImpl" />
+	<bean id="com.lrexperts.liferay.liferayofthings.service.ThingGroupService" class="com.lrexperts.liferay.liferayofthings.service.impl.ThingGroupServiceImpl" />
+	<bean id="com.lrexperts.liferay.liferayofthings.service.persistence.ThingGroupPersistence" class="com.lrexperts.liferay.liferayofthings.service.persistence.ThingGroupPersistenceImpl" parent="basePersistence" />
+</beans>

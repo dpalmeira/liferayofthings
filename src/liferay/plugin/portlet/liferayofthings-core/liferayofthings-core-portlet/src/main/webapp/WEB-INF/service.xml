@@ -1,0 +1,365 @@
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+
+<service-builder package-path="com.lrexperts.liferay.liferayofthings">
+
+	<namespace>LRoT</namespace>
+
+	<entity name="ThingGroup" uuid="true" local-service="true" remote-service="true">
+		<!-- PK fields -->
+		<column name="thingGroupId" type="long" primary="true" />
+
+		<!-- Instance -->
+		<column name="companyId" type="long" />
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		<column name="name" type="String" localized="true" />
+		<column name="description" type="String" localized="true" />		
+		<column name="enabled" type="boolean" />
+
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="name" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="CompanyId" return-type="Collection">
+			<finder-column name="companyId" />
+    	</finder>
+
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId" />
+		</finder>
+		
+		<finder name="C_G" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+		</finder>
+	</entity>
+
+	<entity name="Thing" uuid="true" local-service="true" remote-service="true">
+		<!-- PK fields -->
+		<column name="thingId" type="long" primary="true" />
+
+		<!-- Instance -->
+		<column name="companyId" type="long" />
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Relations fields -->
+		<column name="thingGroupId" type="long" />
+
+		<!-- Other fields -->
+		<column name="name" type="String" localized="true" />
+		<column name="description" type="String" localized="true" />
+		<column name="endpoint" type="String" />
+		<column name="enabled" type="boolean" />
+		<column name="status" type="int" />
+
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="name" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="CompanyId" return-type="Collection">
+			<finder-column name="companyId" />
+    	</finder>
+
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId" />
+		</finder>
+
+		<finder name="C_G" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+		</finder>
+
+		<finder name="C_G_S" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+			<finder-column name="status" />
+		</finder>
+
+		<finder name="ThingGroupId" return-type="Collection">
+			<finder-column name="thingGroupId" />
+		</finder>
+    
+		<!-- References -->
+		<reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
+		<reference package-path="com.liferay.portlet.asset" entity="AssetTag" />
+	</entity>
+
+	<entity name="Sensor" uuid="true" local-service="true" remote-service="true">
+		<!-- PK fields -->
+		<column name="sensorId" type="long" primary="true" />
+
+		<!-- Instance -->
+		<column name="companyId" type="long" />
+		<column name="groupId" type="long" />
+
+		<!-- Relations fields -->
+		<column name="thingId" type="long" />
+		<column name="sensorTypeId" type="long" />
+
+		<!-- Audit fields -->
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		<column name="name" type="String" localized="true" />
+		<column name="description" type="String" localized="true" />
+		<column name="endpoint" type="String" />
+		<column name="enabled" type="boolean" />
+		<column name="status" type="int" />
+
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="name" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="CompanyId" return-type="Collection">
+			<finder-column name="companyId" />
+    	</finder>
+
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId" />
+		</finder>
+
+		<finder name="C_G" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+		</finder>		
+
+		<finder name="C_G_S" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+			<finder-column name="status" />
+		</finder>		
+
+		<finder name="ThingId" return-type="Collection">
+			<finder-column name="thingId" />
+		</finder>
+
+		<finder name="SensorTypeId" return-type="Collection">
+			<finder-column name="sensorTypeId" />
+		</finder>
+
+		<finder name="Endpoint" return-type="Sensor" unique="true">
+			<finder-column name="endpoint" />
+		</finder>
+
+		<finder name="C_G_E_EN" return-type="Sensor" unique="true">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+			<finder-column name="endpoint" />
+			<finder-column name="enabled" />
+		</finder>
+	</entity>
+
+	<entity name="SensorValue" uuid="true" local-service="true" remote-service="true">
+		<!-- PK fields -->
+		<column name="sensorValueId" type="long" primary="true" />
+
+		<!-- Instance -->
+		<column name="companyId" type="long" />
+		<column name="groupId" type="long" />
+
+		<!-- Relations fields -->
+		<column name="sensorId" type="long" />
+
+		<!-- Other fields -->
+		<column name="value" type="String" />
+		<column name="createDate" type="Date" />
+
+		<!-- Order -->
+        <order by="asc">
+            <order-column name="createDate" />
+        </order>
+
+		<!-- Finder methods -->
+		<finder name="CompanyId" return-type="Collection">
+			<finder-column name="companyId" />
+    	</finder>
+
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId" />
+		</finder>
+
+		<finder name="C_G" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+		</finder>		
+
+		<finder name="sensorId" return-type="Collection">
+			<finder-column name="sensorId" />
+		</finder>
+
+        <finder name="LTCreateDate" return-type="Collection" >
+            <finder-column name="createDate" comparator="&lt;" />
+        </finder>
+	</entity>
+
+	<entity name="SensorType" uuid="true" local-service="true" remote-service="true">
+		<!-- PK fields -->
+		<column name="sensorTypeId" type="long" primary="true" />
+
+		<!-- Instance -->
+		<column name="companyId" type="long" />
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		<column name="name" type="String" localized="true" />
+		<column name="description" type="String" localized="true" />
+		<column name="icon" type="String" />
+
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="name" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="CompanyId" return-type="Collection">
+			<finder-column name="companyId" />
+    	</finder>
+
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId" />
+		</finder>
+
+		<finder name="C_G" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+		</finder>		
+	</entity>
+
+	<entity name="Actuator" uuid="true" local-service="true" remote-service="true">
+		<!-- PK fields -->
+		<column name="actuatorId" type="long" primary="true" />
+
+		<!-- Instance -->
+		<column name="companyId" type="long" />
+		<column name="groupId" type="long" />
+
+		<!-- Relations fields -->
+		<column name="thingId" type="long" />
+		<column name="actuatorTypeId" type="long" />
+
+		<!-- Audit fields -->
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		<column name="name" type="String" localized="true" />
+		<column name="description" type="String" localized="true" />
+		<column name="endpoint" type="String" />
+		<column name="enabled" type="boolean" />
+		<column name="status" type="int" />
+
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="name" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="CompanyId" return-type="Collection">
+			<finder-column name="companyId" />
+    	</finder>
+
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId" />
+		</finder>
+
+		<finder name="C_G" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+		</finder>		
+
+		<finder name="C_G_S" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+			<finder-column name="status" />
+		</finder>
+
+		<finder name="ThingId" return-type="Collection">
+			<finder-column name="thingId" />
+		</finder>
+
+		<finder name="ActuatorTypeId" return-type="Collection">
+			<finder-column name="actuatorTypeId" />
+		</finder>
+		
+		<finder name="Endpoint" return-type="Actuator" unique="true">
+			<finder-column name="endpoint" />
+		</finder>
+
+		<finder name="C_G_E_EN" return-type="Sensor" unique="true">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+			<finder-column name="endpoint" />
+			<finder-column name="enabled" />
+		</finder>
+	</entity>
+
+	<entity name="ActuatorType" uuid="true" local-service="true" remote-service="true">
+		<!-- PK fields -->
+		<column name="actuatorTypeId" type="long" primary="true" />
+
+		<!-- Instance -->
+		<column name="companyId" type="long" />
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+		<column name="name" type="String" localized="true" />
+		<column name="description" type="String" localized="true" />
+		<column name="icon" type="String" />
+
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="name" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="CompanyId" return-type="Collection">
+			<finder-column name="companyId" />
+    	</finder>
+
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId" />
+		</finder>
+
+		<finder name="C_G" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+		</finder>		
+	</entity>
+
+</service-builder>

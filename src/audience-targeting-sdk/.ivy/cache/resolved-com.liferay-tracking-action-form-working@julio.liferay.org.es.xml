@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd">
+	<info organisation="com.liferay" module="tracking-action-form" revision="working@julio.liferay.org.es" status="integration" publication="20140922111623">
+		<extends extendType="configurations,description,info" location="/Users/juliocamarero/proyectos/liferay/dev/6.2.x/plugins/ivy.xml" module="com.liferay.sdk" organisation="com.liferay" revision="latest.integration"/>
+	</info>
+
+	<dependencies defaultconf="default">
+		<dependency name="com.liferay.osgi.util" org="com.liferay" rev="1.0.1"/>
+		<dependency name="junit" org="junit" rev="4.11"/>
+		<dependency name="mockito-all" org="org.mockito" rev="1.9.5"/>
+		<dependency name="org.osgi.core" org="org.osgi" rev="5.0.0"/>
+		<dependency name="org.osgi.enterprise" org="org.osgi" rev="5.0.0"/>
+		<dependency name="powermock-api-mockito" org="org.powermock" rev="1.5"/>
+		<dependency name="powermock-api-support" org="org.powermock" rev="1.5"/>
+		<dependency name="powermock-core" org="org.powermock" rev="1.5"/>
+		<dependency name="powermock-module-junit4" org="org.powermock" rev="1.5"/>
+		<dependency name="powermock-module-junit4-common" org="org.powermock" rev="1.5"/>
+		<dependency name="powermock-reflect" org="org.powermock" rev="1.5"/>
+	</dependencies>
+</ivy-module>

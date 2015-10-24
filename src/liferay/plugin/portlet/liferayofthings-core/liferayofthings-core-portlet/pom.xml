@@ -1,0 +1,358 @@
+<?xml version="1.0"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.lrexperts.liferay.liferayofthings</groupId>
+		<artifactId>liferayofthings-core</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<artifactId>liferayofthings-core-portlet</artifactId>
+	<packaging>war</packaging>
+	<name>liferayofthings-core Portlet</name>
+
+	<build>
+		<!-- Added: Filtering resources -->
+        <resources>
+            <resource>
+                <directory>${basedir}/src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                    <include>portlet.properties</include>
+                    <include>*.xml</include>
+                </includes>
+            </resource>
+        </resources>	
+		<plugins>
+			<plugin>
+				<groupId>com.liferay.maven.plugins</groupId>
+				<artifactId>liferay-maven-plugin</artifactId>
+				<version>${liferay.maven.plugin.version}</version>
+				<executions>
+					<execution>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>build-css</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<apiBaseDir>${basedir}/../liferayofthings-core-portlet-service</apiBaseDir>
+				</configuration>
+			</plugin>
+			<!-- Added: Copy .war file to the autodeploy dir -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+            </plugin>
+            <!-- Added: Convert language files -->
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>generate-resources</phase>
+                        <configuration>
+                            <tasks>
+
+                            	<!-- lrotadmin -->
+                                <exec executable="native2ascii">
+                                    <arg line="-encoding UTF-8 src/main/resources/content/language/lrotadmin/Language.properties.native src/main/resources/content/language/lrotadmin/Language.properties"/>
+                                </exec>
+                                <exec executable="native2ascii">
+                                    <arg line="-encoding UTF-8 src/main/resources/content/language/lrotadmin/Language_en_US.properties.native src/main/resources/content/language/lrotadmin/Language_en_US.properties" />
+                                </exec>
+                                <exec executable="native2ascii">
+                                    <arg line="-encoding UTF-8 src/main/resources/content/language/lrotadmin/Language_es_ES.properties.native src/main/resources/content/language/lrotadmin/Language_es_ES.properties" />
+                                </exec>
+
+                            	<!-- temperatureDisplay -->
+                                <exec executable="native2ascii">
+                                    <arg line="-encoding UTF-8 src/main/resources/content/language/temperaturedisplay/Language.properties.native src/main/resources/content/language/temperaturedisplay/Language.properties"/>
+                                </exec>
+                                <exec executable="native2ascii">
+                                    <arg line="-encoding UTF-8 src/main/resources/content/language/temperaturedisplay/Language_en_US.properties.native src/main/resources/content/language/temperaturedisplay/Language_en_US.properties" />
+                                </exec>
+                                <exec executable="native2ascii">
+                                    <arg line="-encoding UTF-8 src/main/resources/content/language/temperaturedisplay/Language_es_ES.properties.native src/main/resources/content/language/temperaturedisplay/Language_es_ES.properties" />
+                                </exec>
+
+                            	<!-- Fitbit -->
+                                <exec executable="native2ascii">
+                                    <arg line="-encoding UTF-8 src/main/resources/content/language/fitbit/Language.properties.native src/main/resources/content/language/fitbit/Language.properties"/>
+                                </exec>
+                                <exec executable="native2ascii">
+                                    <arg line="-encoding UTF-8 src/main/resources/content/language/fitbit/Language_en_US.properties.native src/main/resources/content/language/fitbit/Language_en_US.properties" />
+                                </exec>
+                                <exec executable="native2ascii">
+                                    <arg line="-encoding UTF-8 src/main/resources/content/language/fitbit/Language_es_ES.properties.native src/main/resources/content/language/fitbit/Language_es_ES.properties" />
+                                </exec>
+
+                            	<!-- pillreminderDisplay -->
+                                <exec executable="native2ascii">
+                                    <arg line="-encoding UTF-8 src/main/resources/content/language/pillreminderdisplay/Language.properties.native src/main/resources/content/language/pillreminderdisplay/Language.properties"/>
+                                </exec>
+                                <exec executable="native2ascii">
+                                    <arg line="-encoding UTF-8 src/main/resources/content/language/pillreminderdisplay/Language_en_US.properties.native src/main/resources/content/language/pillreminderdisplay/Language_en_US.properties" />
+                                </exec>
+                                <exec executable="native2ascii">
+                                    <arg line="-encoding UTF-8 src/main/resources/content/language/pillreminderdisplay/Language_es_ES.properties.native src/main/resources/content/language/pillreminderdisplay/Language_es_ES.properties" />
+                                </exec>
+
+                            </tasks>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>            
+		</plugins>
+	</build>
+
+	<dependencies>
+
+        <!-- Project Dependencies -->
+		<dependency>
+			<groupId>com.lrexperts.liferay.liferayofthings</groupId>
+			<artifactId>liferayofthings-core-portlet-service</artifactId>
+			<version>${pom.version}</version>
+		</dependency>
+
+        <dependency>
+            <groupId>com.lrexperts.liferay.liferayofthings</groupId>
+            <artifactId>portlet-core</artifactId>
+        </dependency>
+		
+		<!-- Liferay Dependencies -->
+        <dependency>
+            <groupId>com.liferay.portal</groupId>
+            <artifactId>portal-service</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.liferay.portal</groupId>
+            <artifactId>util-bridges</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.liferay.portal</groupId>
+            <artifactId>util-taglib</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.liferay.portal</groupId>
+            <artifactId>util-java</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <!--
+		<dependency>
+			<groupId>com.liferay</groupId>
+			<artifactId>com.liferay.osgi.util</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		-->
+
+		<!-- IoT Dependencies -->
+		<dependency>
+			<groupId>org.eclipse.paho</groupId>
+			<artifactId>org.eclipse.paho.client.mqttv3</artifactId>
+		</dependency>
+
+        <!-- Spring Framework Dependencies -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc-portlet</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+        </dependency>        
+
+        <!-- J2EE Dependencies -->
+        <dependency>
+            <groupId>javax.portlet</groupId>
+            <artifactId>portlet-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>jsp-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- AspectJ -->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+        </dependency>
+
+        <!-- LOGS  -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>log4j-over-slf4j</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jul-to-slf4j</artifactId>
+        </dependency>
+
+        <!-- TAGLIBS  -->
+        <dependency>
+            <groupId>taglibs</groupId>
+            <artifactId>standard</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+        </dependency>
+
+        <!-- BEANUTILS -->
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>commons-logging</artifactId>
+                    <groupId>commons-logging</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!-- OTHERS -->
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+        </dependency>
+		<dependency>
+			<groupId>org.scribe</groupId>
+			<artifactId>scribe</artifactId>
+		</dependency>
+
+        <!-- MAIL
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity</artifactId>
+            <version>${velocity.version}</version>
+        </dependency>
+		-->
+		<!-- TEST -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-module-junit4</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-api-mockito</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.easymock</groupId>
+			<artifactId>easymock</artifactId>
+		</dependency>
+
+	</dependencies>
+	
+	<!-- Added: Filtering resources by profile -->
+    <profiles>
+        <profile>
+            <id>developer</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <filters>
+                    <filter>${basedir}/src/main/filters/developer.properties</filter>
+                    <filter>${basedir}/src/main/filters/developer.${user.name}.properties</filter>
+                </filters>
+            </build>
+        </profile>
+        <profile>
+            <id>development</id>
+            <build>
+                <filters>
+                    <filter>src/main/filters/development.properties</filter>
+                </filters>
+            </build>
+        </profile>
+        <profile>
+            <id>preproduction</id>
+            <build>
+                <filters>
+                    <filter>src/main/filters/preproduction.properties</filter>
+                </filters>
+            </build>
+        </profile>
+        <profile>
+            <id>production</id>
+            <build>
+                <filters>
+                    <filter>src/main/filters/production.properties</filter>
+                </filters>
+            </build>
+        </profile>
+    </profiles>
+    	
+</project>

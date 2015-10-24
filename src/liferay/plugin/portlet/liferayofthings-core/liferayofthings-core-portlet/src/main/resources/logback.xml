@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <timestamp key="byDate" datePattern="yyyy-MM-dd"/>
+    <appender name="STDOUT" level="DEBUG" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    
+    <root level="${logger.com.lrexperts.liferay.liferayofthings}">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>

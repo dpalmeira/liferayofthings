@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.lrexperts.liferay.liferayofthings.model.Actuator">
+		<field name="uuid" type="String" />
+		<field name="actuatorId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="thingId" type="long" />
+		<field name="actuatorTypeId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" localized="true">
+			<hint name="display-width">150</hint>
+			<hint name="max-length">255</hint>
+			<validator name="required" />
+		</field>
+		<field name="description" type="String" localized="true">
+			<hint-collection name="TEXTAREA" />
+		</field>
+		<field name="endpoint" type="String">
+			<hint name="display-width">200</hint>
+			<hint name="max-length">255</hint>
+			<validator name="required" />
+		</field>
+		<field name="enabled" type="boolean" />
+		<field name="status" type="int" />
+	</model>
+	<model name="com.lrexperts.liferay.liferayofthings.model.ActuatorType">
+		<field name="uuid" type="String" />
+		<field name="actuatorTypeId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" localized="true">
+			<hint name="display-width">150</hint>
+			<hint name="max-length">255</hint>
+			<validator name="required" />
+		</field>
+		<field name="description" type="String" localized="true">
+			<hint-collection name="TEXTAREA" />
+		</field>
+		<field name="icon" type="String" />
+	</model>
+	<model name="com.lrexperts.liferay.liferayofthings.model.Sensor">
+		<field name="uuid" type="String" />
+		<field name="sensorId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="thingId" type="long" />
+		<field name="sensorTypeId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" localized="true">
+			<hint name="display-width">150</hint>
+			<hint name="max-length">255</hint>
+			<validator name="required" />
+		</field>
+		<field name="description" type="String" localized="true">
+			<hint-collection name="TEXTAREA" />
+		</field>
+		<field name="endpoint" type="String">
+			<hint name="display-width">200</hint>
+			<hint name="max-length">255</hint>
+			<validator name="required" />
+		</field>
+		<field name="enabled" type="boolean" />
+		<field name="status" type="int" />
+	</model>
+	<model name="com.lrexperts.liferay.liferayofthings.model.SensorType">
+		<field name="uuid" type="String" />
+		<field name="sensorTypeId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" localized="true">
+			<hint name="display-width">150</hint>
+			<hint name="max-length">255</hint>
+			<validator name="required" />
+		</field>
+		<field name="description" type="String" localized="true">
+			<hint-collection name="TEXTAREA" />
+		</field>
+		<field name="icon" type="String" />
+	</model>
+	<model name="com.lrexperts.liferay.liferayofthings.model.SensorValue">
+		<field name="uuid" type="String" />
+		<field name="sensorValueId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="sensorId" type="long" />
+		<field name="value" type="String" />
+		<field name="createDate" type="Date" />
+	</model>
+	<model name="com.lrexperts.liferay.liferayofthings.model.Thing">
+		<field name="uuid" type="String" />
+		<field name="thingId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="thingGroupId" type="long" />
+		<field name="name" type="String" localized="true">
+			<hint name="display-width">150</hint>
+			<hint name="max-length">255</hint>
+			<validator name="required" />
+		</field>
+		<field name="description" type="String" localized="true">
+			<hint-collection name="TEXTAREA" />
+		</field>
+		<field name="endpoint" type="String">
+			<hint name="display-width">200</hint>
+			<hint name="max-length">255</hint>
+			<validator name="required" />
+		</field>
+		<field name="enabled" type="boolean" />
+		<field name="status" type="int" />
+	</model>
+	<model name="com.lrexperts.liferay.liferayofthings.model.ThingGroup">
+		<field name="uuid" type="String" />
+		<field name="thingGroupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" localized="true">
+			<hint name="display-width">150</hint>
+			<hint name="max-length">255</hint>
+			<validator name="required" />
+		</field>
+		<field name="description" type="String" localized="true">
+			<hint-collection name="TEXTAREA" />
+		</field>
+		<field name="enabled" type="boolean" />
+	</model>
+</model-hints>

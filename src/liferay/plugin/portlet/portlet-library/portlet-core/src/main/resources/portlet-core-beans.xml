@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+						http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+						http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd
+						http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+						http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd"
+>     
+    <bean id="configuration" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+  		<property name="location" value="classpath:portlet.properties"/>
+	</bean>
+	
+	<bean id="messageSource"
+          class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basename" value="classpath:/content/Language"/>
+    </bean>
+
+	<bean id="baseController" class="com.lrexperts.liferay.portlet.core.controllers.BasePortletController" abstract="true">
+		<property name="configuration" ref="configuration"/>
+		<property name="themeDisplayFactory" ref="themeDisplayFactory"/>
+		<property name="customDisplayFactory" ref="customDisplayFactory"/>
+		<property name="portalPreferencesProvider" ref="portalPreferencesProvider"/>
+		<property name="portalUserProvider" ref="portalUserProvider"/>
+		<property name="portalURLFactory" ref="portalURLFactory"/>
+		<property name="messageSource" ref="messageSource"/>
+ 	</bean>
+
+</beans>

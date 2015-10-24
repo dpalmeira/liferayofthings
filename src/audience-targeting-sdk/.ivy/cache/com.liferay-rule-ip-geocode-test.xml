@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="com.liferay"
+		module="rule-ip-geocode"
+		revision="working@julio.liferay.org.es"
+		conf="test"
+		confs="test"
+		date="20140826094344"/>
+	<dependencies>
+	</dependencies>
+</ivy-report>

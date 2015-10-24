@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.lrexperts.liferay.liferayofthings</groupId>
+		<artifactId>liferay-portal</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	
+	<artifactId>liferay-portal-ext-web</artifactId>
+	<packaging>war</packaging>
+	<name>liferay-portal Ext Web</name>
+	
+	<build>
+		<!-- Note: Added to filter *.properties files -->
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+			<resource>
+				<directory>src/main/webapps/WEB-INF/context</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>	
+		<plugins>
+			<plugin>
+				<groupId>com.liferay.maven.plugins</groupId>
+				<artifactId>liferay-maven-plugin</artifactId>
+				<version>${liferay.maven.plugin.version}</version>
+				<configuration>
+					<apiBaseDir>${basedir}/../liferay-portal-ext-service</apiBaseDir>
+					<implBaseDir>${basedir}/../liferay-portal-ext-impl</implBaseDir>
+					<sqlDir>${basedir}/../liferay-portal-ext/src/main/webapp/WEB-INF/sql</sqlDir>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>liferay-portal-ext-impl</artifactId>
+			<version>${project.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>liferay-portal-ext-util-bridges</artifactId>
+			<version>${project.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>liferay-portal-ext-util-java</artifactId>
+			<version>${project.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>liferay-portal-ext-util-taglib</artifactId>
+			<version>${project.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>liferay-portal-ext-service</artifactId>
+			<version>${project.version}</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+	
+	<!--  Note: Added to filtering support. -->
+	<profiles>
+		<profile>
+			<id>developer</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<build>
+				<filters>
+					<filter>src/main/filters/developer.properties</filter>
+					<filter>src/main/filters/developer.${user.name}.properties</filter>
+				</filters>
+			</build>
+		</profile>
+		<profile>
+			<id>development</id>
+			<build>
+				<filters>
+					<filter>src/main/filters/development.properties</filter>
+				</filters>
+			</build>
+		</profile>
+		<profile>
+			<id>preproduction</id>
+			<build>
+				<filters>
+					<filter>src/main/filters/preproduction.properties</filter>
+				</filters>
+			</build>
+		</profile>
+		<profile>
+			<id>production</id>
+			<build>
+				<filters>
+					<filter>src/main/filters/production.properties</filter>
+				</filters>
+			</build>
+		</profile>
+	</profiles>
+
+</project>

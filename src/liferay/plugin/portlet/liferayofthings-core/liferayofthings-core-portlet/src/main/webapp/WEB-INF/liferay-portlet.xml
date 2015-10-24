@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<!DOCTYPE liferay-portlet-app PUBLIC "-//Liferay//DTD Portlet Application 6.2.0//EN" "http://www.liferay.com/dtd/liferay-portlet-app_6_2_0.dtd">
+
+<liferay-portlet-app>
+	<portlet>
+        <portlet-name>lrotadmin</portlet-name>
+        <icon>/img/lrotadmin/icon.png</icon>
+		<control-panel-entry-category>site_administration.configuration</control-panel-entry-category>
+		<control-panel-entry-weight>10.0</control-panel-entry-weight>
+		<control-panel-entry-class>com.lrexperts.liferay.liferayofthings.portlet.lrotadmin.LRoTAdminPanelEntry</control-panel-entry-class>
+		<preferences-owned-by-group>true</preferences-owned-by-group>
+		<use-default-template>true</use-default-template>
+		<private-request-attributes>true</private-request-attributes>
+		<private-session-attributes>true</private-session-attributes>
+		<render-weight>50</render-weight>
+		<header-portlet-css>/css/lrotadmin/main.css</header-portlet-css>
+		<css-class-wrapper>lrotadmin</css-class-wrapper>
+		<add-default-resource>true</add-default-resource>
+	</portlet>
+
+	<portlet>
+        <portlet-name>temperaturedisplay</portlet-name>
+        <icon>/img/temperaturedisplay/icon.png</icon>
+        <configuration-action-class>com.liferay.portal.kernel.portlet.DefaultConfigurationAction</configuration-action-class>
+		<use-default-template>true</use-default-template>
+        <instanceable>true</instanceable>
+		<private-request-attributes>true</private-request-attributes>
+		<private-session-attributes>true</private-session-attributes>
+		<ajaxable>true</ajaxable>
+		<header-portlet-css>/css/temperaturedisplay/main.css</header-portlet-css>
+       	<header-portlet-javascript>/js/amcharts_3.15.2.free/amcharts/amcharts.js</header-portlet-javascript>
+       	<header-portlet-javascript>/js/amcharts_3.15.2.free/amcharts/serial.js</header-portlet-javascript>
+       	<header-portlet-javascript>/js/amcharts_3.15.2.free/amcharts/themes/light.js</header-portlet-javascript>
+		<css-class-wrapper>temperaturedisplay</css-class-wrapper>
+		<add-default-resource>true</add-default-resource>
+	</portlet>
+
+	<portlet>
+        <portlet-name>fitbit</portlet-name>
+        <icon>/img/fitbit/icon.png</icon>
+		<scheduler-entry>
+			<scheduler-event-listener-class>com.lrexperts.liferay.liferayofthings.portlet.fitbit.messaging.FitbitSyncMessageListener</scheduler-event-listener-class>
+			<trigger>
+				<simple>
+					<property-key>fitbit.sync.interval</property-key>
+					<time-unit>minute</time-unit>
+				</simple>
+			</trigger>
+		</scheduler-entry>        
+		<use-default-template>true</use-default-template>
+        <instanceable>false</instanceable>
+		<private-request-attributes>true</private-request-attributes>
+		<private-session-attributes>true</private-session-attributes>
+        <requires-namespaced-parameters>false</requires-namespaced-parameters>
+		<header-portlet-css>/css/fitbit/main.css</header-portlet-css>
+		<css-class-wrapper>fitbit</css-class-wrapper>
+		<add-default-resource>true</add-default-resource>
+	</portlet>
+
+	<portlet>
+        <portlet-name>pillreminderdisplay</portlet-name>
+        <icon>/img/pillreminderdisplay/icon.png</icon>
+        <configuration-action-class>com.liferay.portal.kernel.portlet.DefaultConfigurationAction</configuration-action-class>
+		<use-default-template>true</use-default-template>
+        <instanceable>true</instanceable>
+		<private-request-attributes>true</private-request-attributes>
+		<private-session-attributes>true</private-session-attributes>
+		<ajaxable>true</ajaxable>
+		<header-portlet-css>/css/pillreminderdisplay/main.css</header-portlet-css>
+       	<header-portlet-javascript>/js/amcharts_3.15.2.free/amcharts/amcharts.js</header-portlet-javascript>
+       	<header-portlet-javascript>/js/amcharts_3.15.2.free/amcharts/serial.js</header-portlet-javascript>
+       	<header-portlet-javascript>/js/amcharts_3.15.2.free/amcharts/themes/light.js</header-portlet-javascript>
+		<css-class-wrapper>pillreminderdisplay</css-class-wrapper>
+		<add-default-resource>true</add-default-resource>
+	</portlet>
+
+	<!-- ROLES MAPPER -->
+	<role-mapper>
+		<role-name>administrator</role-name>
+		<role-link>Administrator</role-link>
+	</role-mapper>
+	<role-mapper>
+		<role-name>guest</role-name>
+		<role-link>Guest</role-link>
+	</role-mapper>
+	<role-mapper>
+		<role-name>power-user</role-name>
+		<role-link>Power User</role-link>
+	</role-mapper>
+	<role-mapper>
+		<role-name>user</role-name>
+		<role-link>User</role-link>
+	</role-mapper>
+</liferay-portlet-app>

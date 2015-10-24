@@ -1,0 +1,10 @@
+###############################################
+######    pillreminderdisplay PORTLET    ######
+###############################################
+
+javax.portlet.title=Pill Reminder Display
+javax.portlet.description=Pill Reminder Display let you see the sensor data graph.
+
+# Common
+pillreminderdisplay.config.sensor-endpoint=Sensor Endpoint
+pillreminderdisplay.please-configure-this-portlet-to-select-the-sensor-topic-to-show=Please configure this portlet to select the sensor topic to show.

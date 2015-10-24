@@ -1,0 +1,35 @@
+<liferay-ui:search-container-column-text
+	href="<%= rowURL %>"
+	name="thing.field.name"
+	value="<%= thing.getName(locale) %>"
+/>
+
+<liferay-ui:search-container-column-text
+	href="<%= rowURL %>"
+	name="thing.field.description"
+	value="<%= StringUtil.shorten(thing.getDescription(locale), LRoTWebKeys.LROT_MAX_CHARS_IN_LIST_COLUMNS) %>"
+/>
+
+<liferay-ui:search-container-column-date
+	href="<%= rowURL %>"
+	name="thing.field.modified-date"
+	value="<%= thing.getModifiedDate() %>"
+/>
+
+<liferay-ui:search-container-column-text
+	href="<%= rowURL %>"
+	name="thing.field.enabled"
+	align="center">
+	<% if (thing.getEnabled()) { %>
+		<liferay-ui:icon src="/liferayofthings-core-portlet/img/common/icons/checked.png"
+			message='<%= LanguageUtil.get(pageContext, "thing.enabled") %>'/>
+	<% } else { %>
+		<liferay-ui:icon src="/liferayofthings-core-portlet/img/common/icons/unchecked.png"
+			message='<%= LanguageUtil.get(pageContext, "thing.disabled") %>'/>
+	<% } %>
+</liferay-ui:search-container-column-text>
+
+<liferay-ui:search-container-column-jsp
+	align="right"
+	path="/WEB-INF/jsp/portlet/lrotadmin/thing_actions.jsp"
+/>

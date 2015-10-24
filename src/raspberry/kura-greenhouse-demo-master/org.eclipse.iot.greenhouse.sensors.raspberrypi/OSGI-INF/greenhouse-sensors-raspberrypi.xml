@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" activate="activate" deactivate="deactivate" enabled="true" immediate="true" name="org.eclipse.iot.greenhouse.sensors.raspberrypi.GreenhouseSensorsRaspiService">
+	<implementation class="org.eclipse.iot.greenhouse.sensors.raspberrypi.Pi4JGreenhouseSensorService"/>
+
+   <service>
+      <provide interface="org.eclipse.iot.greenhouse.sensors.SensorService"/>
+   </service>
+   <reference bind="addSensorChangedListener" cardinality="0..n" interface="org.eclipse.iot.greenhouse.sensors.SensorChangedListener" name="SensorChangedListener" policy="dynamic" unbind="removeSensorChangedListener"/>
+   
+</scr:component>

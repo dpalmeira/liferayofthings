@@ -1,0 +1,57 @@
+<%
+SensorType sensorType = SensorTypeLocalServiceUtil.getSensorType(sensor.getSensorTypeId());
+
+SensorValue sensorValue = SensorValueLocalServiceUtil.getLastSensorValue(sensor.getSensorId());
+String lastSensorValue = (sensorValue!=null ? sensorValue.getValue() : StringPool.BLANK);
+%>
+
+<liferay-ui:search-container-column-text
+	href="<%= rowURL %>"
+	name="sensor.field.name"
+	value="<%= sensor.getName(locale) %>"
+/>
+
+<liferay-ui:search-container-column-text
+	href="<%= rowURL %>"
+	name="sensor.field.description"
+	value="<%= StringUtil.shorten(sensor.getDescription(locale), LRoTWebKeys.LROT_MAX_CHARS_IN_LIST_COLUMNS) %>"
+/>
+
+<liferay-ui:search-container-column-text
+	href="<%= rowURL %>"
+	name="sensor.field.sensor.type.id">
+
+	<liferay-ui:icon src='<%= "/liferayofthings-core-portlet/img/common/icons/" + sensorType.getIcon() %>'
+		message='<%= LanguageUtil.format(pageContext, "sensor.sensor-type-x", sensorType.getName(locale), false) %>'/>
+</liferay-ui:search-container-column-text>
+
+<liferay-ui:search-container-column-date
+	href="<%= rowURL %>"
+	name="sensor.field.modified-date"
+	value="<%= sensor.getModifiedDate() %>"
+/>
+
+<liferay-ui:search-container-column-text
+	href="<%= rowURL %>"
+	name="sensor.field.enabled"
+	align="center">
+
+	<% if (sensor.getEnabled()) { %>
+		<liferay-ui:icon src="/liferayofthings-core-portlet/img/common/icons/checked.png"
+			message='<%= LanguageUtil.get(pageContext, "sensor.enabled") %>'/>
+	<% } else { %>
+		<liferay-ui:icon src="/liferayofthings-core-portlet/img/common/icons/unchecked.png"
+			message='<%= LanguageUtil.get(pageContext, "sensor.disabled") %>'/>
+	<% } %>
+</liferay-ui:search-container-column-text>
+
+<liferay-ui:search-container-column-text
+	href="<%= rowURL %>"
+	name="sensor.last.data"
+	value="<%= lastSensorValue %>"
+/>
+
+<liferay-ui:search-container-column-jsp
+	align="right"
+	path="/WEB-INF/jsp/portlet/lrotadmin/sensor_actions.jsp"
+/>

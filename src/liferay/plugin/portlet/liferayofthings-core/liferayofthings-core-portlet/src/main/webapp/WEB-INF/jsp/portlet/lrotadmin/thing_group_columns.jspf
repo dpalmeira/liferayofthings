@@ -1,0 +1,35 @@
+<liferay-ui:search-container-column-text
+	href="<%= rowURL %>"
+	name="thing.group.field.name"
+	value="<%= thingGroup.getName(locale) %>"
+/>
+
+<liferay-ui:search-container-column-text
+	href="<%= rowURL %>"
+	name="thing.group.field.description"
+	value="<%= StringUtil.shorten(thingGroup.getDescription(locale), LRoTWebKeys.LROT_MAX_CHARS_IN_LIST_COLUMNS) %>"
+/>
+
+<liferay-ui:search-container-column-date
+	href="<%= rowURL %>"
+	name="thing.group.field.modified-date"
+	value="<%= thingGroup.getModifiedDate() %>"
+/>
+
+<liferay-ui:search-container-column-text
+	href="<%= rowURL %>"
+	name="thing.group.field.enabled"
+	align="center">
+	<% if (thingGroup.getEnabled()) { %>
+		<liferay-ui:icon src="/liferayofthings-core-portlet/img/common/icons/checked.png"
+			message='<%= LanguageUtil.get(pageContext, "thingGroup.enabled") %>'/>
+	<% } else { %>
+		<liferay-ui:icon src="/liferayofthings-core-portlet/img/common/icons/unchecked.png"
+			message='<%= LanguageUtil.get(pageContext, "thingGroup.disabled") %>'/>
+	<% } %>
+</liferay-ui:search-container-column-text>
+
+<liferay-ui:search-container-column-jsp
+	align="right"
+	path="/WEB-INF/jsp/portlet/lrotadmin/thing_group_actions.jsp"
+/>

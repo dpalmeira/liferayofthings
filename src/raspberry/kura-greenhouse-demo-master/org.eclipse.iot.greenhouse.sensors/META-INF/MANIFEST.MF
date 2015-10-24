@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.eclipse.iot.greenhouse.sensors
+Bundle-SymbolicName: org.eclipse.iot.greenhouse.sensors;singleton:=true
+Bundle-Version: 0.1.0.SNAPSHOT
+Bundle-Vendor: Eclipse Foundation
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Export-Package: org.eclipse.iot.greenhouse.sensors

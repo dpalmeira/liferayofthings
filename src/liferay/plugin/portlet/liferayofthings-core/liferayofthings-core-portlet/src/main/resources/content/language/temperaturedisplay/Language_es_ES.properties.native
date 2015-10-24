@@ -1,0 +1,10 @@
+###############################################
+######     temperaturedisplay PORTLET    ######
+###############################################
+
+javax.portlet.title=Temperature Display
+javax.portlet.description=Temperature Display let you see the sensor data graph.
+
+# Common
+temperaturedisplay.config.sensor-endpoint=Sensor Endpoint
+temperaturedisplay.please-configure-this-portlet-to-select-the-sensor-topic-to-show=Please configure this portlet to select the sensor topic to show.

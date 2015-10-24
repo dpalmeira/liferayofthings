@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="com.liferay"
+		module="rule-user-logged"
+		revision="working@julio.liferay.org.es"
+		conf="default"
+		confs="default"
+		date="20140922131722"/>
+	<dependencies>
+		<module organisation="org.powermock" name="powermock-module-junit4">
+			<revision name="1.5" status="release" pubdate="20121204110311" resolver="liferay-public" artresolver="default" homepage="http://www.powermock.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="12">
+				<metadata-artifact status="no" details="" size="5388" time="0" location="/Users/juliocamarero/proyectos/liferay/dev/6.2.x/plugins/.ivy/cache/org.powermock/powermock-module-junit4/ivy-1.5.xml" searched="false" origin-is-local="false" origin-location="http://cdn.repository.liferay.com/nexus/content/groups/public/org/powermock/powermock-module-junit4/1.5/powermock-module-junit4-1.5.pom"/>
+				<caller organisation="com.liferay" name="rule-user-logged" conf="default" rev="1.5" rev-constraint-default="1.5" rev-constraint-dynamic="1.5" callerrev="working@julio.liferay.org.es"/>
+				<artifacts>
+					<artifact name="powermock-module-junit4" type="jar" ext="jar" status="no" details="" size="25976" time="0" location="/Users/juliocamarero/proyectos/liferay/dev/6.2.x/plugins/.ivy/cache/org.powermock/powermock-module-junit4/jars/powermock-module-junit4-1.5.jar">
+						<origin-location is-local="false" location="http://cdn.repository.liferay.com/nexus/content/groups/public/org/powermock/powermock-module-junit4/1.5/powermock-module-junit4-1.5.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.powermock" name="powermock-module-junit4-common">
+			<revision name="1.5" status="release" pubdate="20121204110300" resolver="liferay-public" artresolver="default" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, master(*), runtime, compile(*), runtime(*), master" position="13">
+				<metadata-artifact status="no" details="" size="5479" time="0" location="/Users/juliocamarero/proyectos/liferay/dev/6.2.x/plugins/.ivy/cache/org.powermock/powermock-module-junit4-common/ivy-1.5.xml" searched="false" origin-is-local="false" origin-location="http://cdn.repository.liferay.com/nexus/content/groups/public/org/powermock/powermock-module-junit4-common/1.5/powermock-module-junit4-common-1.5.pom"/>
+				<caller organisation="com.liferay" name="rule-user-logged" conf="default" rev="1.5" rev-constraint-default="1.5" rev-constraint-dynamic="1.5" callerrev="working@julio.liferay.org.es"/>
+				<caller organisation="org.powermock" name="powermock-module-junit4" conf="default, compile, runtime, master" rev="1.5" rev-constraint-default="1.5" rev-constraint-dynamic="1.5" callerrev="1.5"/>
+				<artifacts>
+					<artifact name="powermock-module-junit4-common" type="jar" ext="jar" status="no" details="" size="13349" time="0" location="/Users/juliocamarero/proyectos/liferay/dev/6.2.x/plugins/.ivy/cache/org.powermock/powermock-module-junit4-common/jars/powermock-module-junit4-common-1.5.jar">
+						<origin-location is-local="false" location="http://cdn.repository.liferay.com/nexus/content/groups/public/org/powermock/powermock-module-junit4-common/1.5/powermock-module-junit4-common-1.5.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.powermock" name="powermock-api-mockito">
+			<revision name="1.5" status="release" pubdate="20121204110247" resolver="liferay-public" artresolver="default" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="6">
+				<metadata-artifact status="no" details="" size="5392" time="0" location="/Users/juliocamarero/proyectos/liferay/dev/6.2.x/plugins/.ivy/cache/org.powermock/powermock-api-mockito/ivy-1.5.xml" searched="false" origin-is-local="false" origin-location="http://cdn.repository.liferay.com/nexus/content/groups/public/org/powermock/powermock-api-mockito/1.5/powermock-api-mockito-1.5.pom"/>
+				<caller organisation="com.liferay" name="rule-user-logged" conf="default" rev="1.5" rev-constraint-default="1.5" rev-constraint-dynamic="1.5" callerrev="working@julio.liferay.org.es"/>
+				<artifacts>
+					<artifact name="powermock-api-mockito" type="jar" ext="jar" status="no" details="" size="67946" time="0" location="/Users/juliocamarero/proyectos/liferay/dev/6.2.x/plugins/.ivy/cache/org.powermock/powermock-api-mockito/jars/powermock-api-mockito-1.5.jar">
+						<origin-location is-local="false" location="http://cdn.repository.liferay.com/nexus/content/groups/public/org/powermock/powermock-api-mockito/1.5/powermock-api-mockito-1.5.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.powermock" name="powermock-api-support">
+			<revision name="1.5" status="release" pubdate="20121204110218" resolver="liferay-public" artresolver="default" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, master(*), runtime, compile(*), runtime(*), master" position="7">
+				<metadata-artifact status="no" details="" size="5381" time="0" location="/Users/juliocamarero/proyectos/liferay/dev/6.2.x/plugins/.ivy/cache/org.powermock/powermock-api-support/ivy-1.5.xml" searched="false" origin-is-local="false" origin-location="http://cdn.repository.liferay.com/nexus/content/groups/public/org/powermock/powermock-api-support/1.5/powermock-api-support-1.5.pom"/>
+				<caller organisation="com.liferay" name="rule-user-logged" conf="default" rev="1.5" rev-constraint-default="1.5" rev-constraint-dynamic="1.5" callerrev="working@julio.liferay.org.es"/>
+				<caller organisation="org.powermock" name="powermock-api-mockito" conf="default, compile, runtime, master" rev="1.5" rev-constraint-default="1.5" rev-constraint-dynamic="1.5" callerrev="1.5"/>
+				<artifacts>
+					<artifact name="powermock-api-support" type="jar" ext="jar" status="no" details="" size="18539" time="0" location="/Users/juliocamarero/proyectos/liferay/dev/6.2.x/plugins/.ivy/cache/org.powermock/powermock-api-support/jars/powermock-api-support-1.5.jar">
+						<origin-location is-local="false" location="http://cdn.repository.liferay.com/nexus/content/groups/public/org/powermock/powermock-api-support/1.5/powermock-api-support-1.5.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.powermock" name="powermock-core">
+			<revision name="1.5" status="release" pubdate="20121204110205" resolver="liferay-public" artresolver="default" homepage="http://www.powermock.org" downloaded="false" searched="false" default="false" conf="default, compile, master(*), runtime, compile(*), runtime(*), master" position="8">
+				<metadata-artifact status="no" details="" size="4698" time="0" location="/Users/juliocamarero/proyectos/liferay/dev/6.2.x/plugins/.ivy/cache/org.powermock/powermock-core/ivy-1.5.xml" searched="false" origin-is-local="false" origin-location="http://cdn.repository.liferay.com/nexus/content/groups/public/org/powermock/powermock-core/1.5/powermock-core-1.5.pom"/>
+				<caller organisation="com.liferay" name="rule-user-logged" conf="default" rev="1.5" rev-constraint-default="1.5" rev-constraint-dynamic="1.5" callerrev="working@julio.liferay.org.es"/>
+				<caller organisation="org.powermock" name="powermock-module-junit4-common" conf="default, compile, runtime, master" rev="1.5" rev-constraint-default="1.5" rev-constraint-dynamic="1.5" callerrev="1.5"/>
+				<caller organisation="org.powermock" name="powermock-api-support" conf="default, compile, runtime, master" rev="1.5" rev-constraint-default="1.5" rev-constraint-dynamic="1.5" callerrev="1.5"/>
+				<artifacts>
+					<artifact name="powermock-core" type="jar" ext="jar" status="no" details="" size="84351" time="0" location="/Users/juliocamarero/proyectos/liferay/dev/6.2.x/plugins/.ivy/cache/org.powermock/powermock-core/jars/powermock-core-1.5.jar">
+						<origin-location is-local="false" location="http://cdn.repository.liferay.com/nexus/content/groups/public/org/powermock/powermock-core/1.5/powermock-core-1.5.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.javassist" name="javassist">
+			<revision name="3.17.1-GA" status="release" pubdate="20121203171611" resolver="liferay-public" artresolver="default" homepage="http://www.javassist.org/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="11">
+				<license name="MPL 1.1" url="http://www.mozilla.org/MPL/MPL-1.1.html"/>
+				<license name="LGPL 2.1" url="http://www.gnu.org/licenses/lgpl-2.1.html"/>
+				<license name="Apache License 2.0" url="http://www.apache.org/licenses/"/>
+				<metadata-artifact status="no" details="" size="3160" time="0" location="/Users/juliocamarero/proyectos/liferay/dev/6.2.x/plugins/.ivy/cache/org.javassist/javassist/ivy-3.17.1-GA.xml" searched="false" origin-is-local="false" origin-location="http://cdn.repository.liferay.com/nexus/content/groups/public/org/javassist/javassist/3.17.1-GA/javassist-3.17.1-GA.pom"/>
+				<caller organisation="org.powermock" name="powermock-core" conf="default, compile, runtime, master" rev="3.17.1-GA" rev-constraint-default="3.17.1-GA" rev-constraint-dynamic="3.17.1-GA" callerrev="1.5"/>
+				<artifacts>
+					<artifact name="javassist" type="bundle" ext="jar" status="no" details="" size="711972" time="0" location="/Users/juliocamarero/proyectos/liferay/dev/6.2.x/plugins/.ivy/cache/org.javassist/javassist/bundles/javassist-3.17.1-GA.jar">
+						<origin-location is-local="false" location="http://cdn.repository.liferay.com/nexus/content/groups/public/org/javassist/javassist/3.17.1-GA/javassist-3.17.1-GA.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.powermock" name="powermock-reflect">
+			<revision name="1.5" status="release" pubdate="20121204110150" resolver="liferay-public" artresolver="default" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, master(*), runtime, compile(*), runtime(*), master" position="9">
+				<metadata-artifact status="no" details="" size="4514" time="0" location="/Users/juliocamarero/proyectos/liferay/dev/6.2.x/plugins/.ivy/cache/org.powermock/powermock-reflect/ivy-1.5.xml" searched="false" origin-is-local="false" origin-location="http://cdn.repository.liferay.com/nexus/content/groups/public/org/powermock/powermock-reflect/1.5/powermock-reflect-1.5.pom"/>
+				<caller organisation="com.liferay" name="rule-user-logged" conf="default" rev="1.5" rev-constraint-default="1.5" rev-constraint-dynamic="1.5" callerrev="working@julio.liferay.org.es"/>
+				<caller organisation="org.powermock" name="powermock-core" conf="default, compile, runtime, master" rev="1.5" rev-constraint-default="1.5" rev-constraint-dynamic="1.5" callerrev="1.5"/>
+				<caller organisation="org.powermock" name="powermock-module-junit4-common" conf="default, compile, runtime, master" rev="1.5" rev-constraint-default="1.5" rev-constraint-dynamic="1.5" callerrev="1.5"/>
+				<caller organisation="org.powermock" name="powermock-api-support" conf="default, compile, runtime, master" rev="1.5" rev-constraint-default="1.5" rev-constraint-dynamic="1.5" callerrev="1.5"/>
+				<artifacts>
+					<artifact name="powermock-reflect" type="jar" ext="jar" status="no" details="" size="43255" time="0" location="/Users/juliocamarero/proyectos/liferay/dev/6.2.x/plugins/.ivy/cache/org.powermock/powermock-reflect/jars/powermock-reflect-1.5.jar">
+						<origin-location is-local="false" location="http://cdn.repository.liferay.com/nexus/content/groups/public/org/powermock/powermock-reflect/1.5/powermock-reflect-1.5.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.objenesis" name="objenesis">
+			<revision name="1.2" status="release" pubdate="20090827005019" resolver="liferay-public" artresolver="default" homepage="http://objenesis.googlecode.com/svn/docs/index.html" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="10">
+				<metadata-artifact status="no" details="" size="3344" time="0" location="/Users/juliocamarero/proyectos/liferay/dev/6.2.x/plugins/.ivy/cache/org.objenesis/objenesis/ivy-1.2.xml" searched="false" origin-is-local="false" origin-location="http://cdn.repository.liferay.com/nexus/content/groups/public/org/objenesis/objenesis/1.2/objenesis-1.2.pom"/>
+				<caller organisation="org.powermock" name="powermock-reflect" conf="default, compile, runtime, master" rev="1.2" rev-constraint-default="1.2" rev-constraint-dynamic="1.2" callerrev="1.5"/>
+				<artifacts>
+					<artifact name="objenesis" type="jar" ext="jar" status="no" details="" size="36046" time="0" location="/Users/juliocamarero/proyectos/liferay/dev/6.2.x/plugins/.ivy/cache/org.objenesis/objenesis/jars/objenesis-1.2.jar">
+						<origin-location is-local="false" location="http://cdn.repository.liferay.com/nexus/content/groups/public/org/objenesis/objenesis/1.2/objenesis-1.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.osgi" name="org.osgi.enterprise">
+			<revision name="5.0.0" status="release" pubdate="20120614133504" resolver="liferay-public" artresolver="default" homepage="     http://www.osgi.org   " downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="5">
+				<license name="         Apache License, Version 2.0       " url="         http://opensource.org/licenses/apache2.0.php       "/>
+				<metadata-artifact status="no" details="" size="2704" time="0" location="/Users/juliocamarero/proyectos/liferay/dev/6.2.x/plugins/.ivy/cache/org.osgi/org.osgi.enterprise/ivy-5.0.0.xml" searched="false" origin-is-local="false" origin-location="http://cdn.repository.liferay.com/nexus/content/groups/public/org/osgi/org.osgi.enterprise/5.0.0/org.osgi.enterprise-5.0.0.pom"/>
+				<caller organisation="com.liferay" name="rule-user-logged" conf="default" rev="5.0.0" rev-constraint-default="5.0.0" rev-constraint-dynamic="5.0.0" callerrev="working@julio.liferay.org.es"/>
+				<artifacts>
+					<artifact name="org.osgi.enterprise" type="jar" ext="jar" status="no" details="" size="497420" time="0" location="/Users/juliocamarero/proyectos/liferay/dev/6.2.x/plugins/.ivy/cache/org.osgi/org.osgi.enterprise/jars/org.osgi.enterprise-5.0.0.jar">
+						<origin-location is-local="false" location="http://cdn.repository.liferay.com/nexus/content/groups/public/org/osgi/org.osgi.enterprise/5.0.0/org.osgi.enterprise-5.0.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.mockito" name="mockito-all">
+			<revision name="1.9.5" status="release" pubdate="20121014121023" resolver="liferay-public" artresolver="default" homepage="http://www.mockito.org" downloaded="false" searched="false" default="false" conf="default, compile, master(*), compile(*), runtime, runtime(*), master" position="4">
+				<license name="The MIT License" url="http://code.google.com/p/mockito/wiki/License"/>
+				<metadata-artifact status="no" details="" size="2543" time="0" location="/Users/juliocamarero/proyectos/liferay/dev/6.2.x/plugins/.ivy/cache/org.mockito/mockito-all/ivy-1.9.5.xml" searched="false" origin-is-local="false" origin-location="http://cdn.repository.liferay.com/nexus/content/groups/public/org/mockito/mockito-all/1.9.5/mockito-all-1.9.5.pom"/>
+				<caller organisation="com.liferay" name="rule-user-logged" conf="default" rev="1.9.5" rev-constraint-default="1.9.5" rev-constraint-dynamic="1.9.5" callerrev="working@julio.liferay.org.es"/>
+				<caller organisation="org.powermock" name="powermock-api-mockito" conf="default, compile, runtime, master" rev="1.9.5" rev-constraint-default="1.9.5" rev-constraint-dynamic="1.9.5" callerrev="1.5"/>
+				<artifacts>
+					<artifact name="mockito-all" type="jar" ext="jar" status="no" details="" size="1581066" time="0" location="/Users/juliocamarero/proyectos/liferay/dev/6.2.x/plugins/.ivy/cache/org.mockito/mockito-all/jars/mockito-all-1.9.5.jar">
+						<origin-location is-local="false" location="http://cdn.repository.liferay.com/nexus/content/groups/public/org/mockito/mockito-all/1.9.5/mockito-all-1.9.5.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="junit" name="junit">
+			<revision name="4.11" status="release" pubdate="20140130130216" resolver="local-m2" artresolver="default" homepage="http://junit.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master, master(*), compile(*), runtime(*)" position="2">
+				<license name="Common Public License Version 1.0" url="http://www.opensource.org/licenses/cpl1.0.txt"/>
+				<metadata-artifact status="no" details="" size="2944" time="0" location="/Users/juliocamarero/proyectos/liferay/dev/6.2.x/plugins/.ivy/cache/junit/junit/ivy-4.11.xml" searched="false" origin-is-local="false" origin-location="file:/Users/juliocamarero/.m2/repository/junit/junit/4.11/junit-4.11.pom"/>
+				<caller organisation="com.liferay" name="rule-user-logged" conf="default" rev="4.11" rev-constraint-default="4.11" rev-constraint-dynamic="4.11" callerrev="working@julio.liferay.org.es"/>
+				<caller organisation="org.powermock" name="powermock-module-junit4" conf="default, compile, runtime, master" rev="4.9" rev-constraint-default="4.9" rev-constraint-dynamic="4.9" callerrev="1.5"/>
+				<caller organisation="org.powermock" name="powermock-module-junit4-common" conf="default, compile, runtime, master" rev="4.4" rev-constraint-default="4.4" rev-constraint-dynamic="4.4" callerrev="1.5"/>
+				<artifacts>
+					<artifact name="junit" type="jar" ext="jar" status="no" details="" size="245039" time="0" location="/Users/juliocamarero/proyectos/liferay/dev/6.2.x/plugins/.ivy/cache/junit/junit/jars/junit-4.11.jar">
+						<origin-location is-local="false" location="file:/Users/juliocamarero/.m2/repository/junit/junit/4.11/junit-4.11.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+			<revision name="4.4" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, master(*), runtime, compile(*), runtime(*), default, master" position="-1">
+				<evicted-by rev="4.11"/>
+				<caller organisation="com.liferay" name="rule-user-logged" conf="default" rev="4.11" rev-constraint-default="4.11" rev-constraint-dynamic="4.11" callerrev="working@julio.liferay.org.es"/>
+				<caller organisation="org.powermock" name="powermock-module-junit4" conf="default, compile, runtime, master" rev="4.9" rev-constraint-default="4.9" rev-constraint-dynamic="4.9" callerrev="1.5"/>
+				<caller organisation="org.powermock" name="powermock-module-junit4-common" conf="default, compile, runtime, master" rev="4.4" rev-constraint-default="4.4" rev-constraint-dynamic="4.4" callerrev="1.5"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+			<revision name="4.9" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, master(*), runtime, compile(*), runtime(*), master, default" position="-1">
+				<evicted-by rev="4.11"/>
+				<caller organisation="com.liferay" name="rule-user-logged" conf="default" rev="4.11" rev-constraint-default="4.11" rev-constraint-dynamic="4.11" callerrev="working@julio.liferay.org.es"/>
+				<caller organisation="org.powermock" name="powermock-module-junit4" conf="default, compile, runtime, master" rev="4.9" rev-constraint-default="4.9" rev-constraint-dynamic="4.9" callerrev="1.5"/>
+				<caller organisation="org.powermock" name="powermock-module-junit4-common" conf="default, compile, runtime, master" rev="4.4" rev-constraint-default="4.4" rev-constraint-dynamic="4.4" callerrev="1.5"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.hamcrest" name="hamcrest-core">
+			<revision name="1.3" status="release" pubdate="20140130130216" resolver="local-m2" artresolver="default" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="3">
+				<metadata-artifact status="no" details="" size="2592" time="0" location="/Users/juliocamarero/proyectos/liferay/dev/6.2.x/plugins/.ivy/cache/org.hamcrest/hamcrest-core/ivy-1.3.xml" searched="false" origin-is-local="false" origin-location="file:/Users/juliocamarero/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.pom"/>
+				<caller organisation="junit" name="junit" conf="default, compile, runtime, master" rev="1.3" rev-constraint-default="1.3" rev-constraint-dynamic="1.3" callerrev="4.11"/>
+				<artifacts>
+					<artifact name="hamcrest-core" type="jar" ext="jar" status="no" details="" size="45024" time="0" location="/Users/juliocamarero/proyectos/liferay/dev/6.2.x/plugins/.ivy/cache/org.hamcrest/hamcrest-core/jars/hamcrest-core-1.3.jar">
+						<origin-location is-local="false" location="file:/Users/juliocamarero/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.liferay" name="com.liferay.osgi.util">
+			<revision name="1.0.1" status="release" pubdate="20140922055450" resolver="liferay-public" artresolver="default" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="0">
+				<license name="LGPL 2.1" url="http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt"/>
+				<metadata-artifact status="no" details="" size="2615" time="0" location="/Users/juliocamarero/proyectos/liferay/dev/6.2.x/plugins/.ivy/cache/com.liferay/com.liferay.osgi.util/ivy-1.0.1.xml" searched="false" origin-is-local="false" origin-location="http://cdn.repository.liferay.com/nexus/content/groups/public/com/liferay/com.liferay.osgi.util/1.0.1/com.liferay.osgi.util-1.0.1.pom"/>
+				<caller organisation="com.liferay" name="rule-user-logged" conf="default" rev="1.0.1" rev-constraint-default="1.0.1" rev-constraint-dynamic="1.0.1" callerrev="working@julio.liferay.org.es"/>
+				<artifacts>
+					<artifact name="com.liferay.osgi.util" type="jar" ext="jar" status="no" details="" size="3734" time="0" location="/Users/juliocamarero/proyectos/liferay/dev/6.2.x/plugins/.ivy/cache/com.liferay/com.liferay.osgi.util/jars/com.liferay.osgi.util-1.0.1.jar">
+						<origin-location is-local="false" location="http://cdn.repository.liferay.com/nexus/content/groups/public/com/liferay/com.liferay.osgi.util/1.0.1/com.liferay.osgi.util-1.0.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.osgi" name="org.osgi.core">
+			<revision name="5.0.0" status="release" pubdate="20120614133413" resolver="liferay-public" artresolver="default" homepage="     http://www.osgi.org   " downloaded="false" searched="false" default="false" conf="default, compile, master(*), runtime, compile(*), runtime(*), master" position="1">
+				<license name="         Apache License, Version 2.0       " url="         http://opensource.org/licenses/apache2.0.php       "/>
+				<metadata-artifact status="no" details="" size="2674" time="0" location="/Users/juliocamarero/proyectos/liferay/dev/6.2.x/plugins/.ivy/cache/org.osgi/org.osgi.core/ivy-5.0.0.xml" searched="false" origin-is-local="false" origin-location="http://cdn.repository.liferay.com/nexus/content/groups/public/org/osgi/org.osgi.core/5.0.0/org.osgi.core-5.0.0.pom"/>
+				<caller organisation="com.liferay" name="rule-user-logged" conf="default" rev="5.0.0" rev-constraint-default="5.0.0" rev-constraint-dynamic="5.0.0" callerrev="working@julio.liferay.org.es"/>
+				<caller organisation="com.liferay" name="com.liferay.osgi.util" conf="default, compile, runtime, master" rev="5.0.0" rev-constraint-default="5.0.0" rev-constraint-dynamic="5.0.0" callerrev="1.0.1"/>
+				<artifacts>
+					<artifact name="org.osgi.core" type="jar" ext="jar" status="no" details="" size="430350" time="0" location="/Users/juliocamarero/proyectos/liferay/dev/6.2.x/plugins/.ivy/cache/org.osgi/org.osgi.core/jars/org.osgi.core-5.0.0.jar">
+						<origin-location is-local="false" location="http://cdn.repository.liferay.com/nexus/content/groups/public/org/osgi/org.osgi.core/5.0.0/org.osgi.core-5.0.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

@@ -1,0 +1,47 @@
+<%
+ActuatorType actuatorType = ActuatorTypeLocalServiceUtil.getActuatorType(actuator.getActuatorTypeId());
+%>
+
+<liferay-ui:search-container-column-text
+	href="<%= rowURL %>"
+	name="actuator.field.name"
+	value="<%= actuator.getName(locale) %>"
+/>
+
+<liferay-ui:search-container-column-text
+	href="<%= rowURL %>"
+	name="actuator.field.description"
+	value="<%= StringUtil.shorten(actuator.getDescription(locale), LRoTWebKeys.LROT_MAX_CHARS_IN_LIST_COLUMNS) %>"
+/>
+
+<liferay-ui:search-container-column-text
+	href="<%= rowURL %>"
+	name="actuator.field.actuator.type.id">
+
+	<liferay-ui:icon src='<%= "/liferayofthings-core-portlet/img/common/icons/" + actuatorType.getIcon() %>'
+		message='<%= LanguageUtil.format(pageContext, "actuator.actuator-type-x", actuatorType.getName(locale), false) %>'/>
+</liferay-ui:search-container-column-text>
+
+<liferay-ui:search-container-column-date
+	href="<%= rowURL %>"
+	name="actuator.field.modified-date"
+	value="<%= actuator.getModifiedDate() %>"
+/>
+
+<liferay-ui:search-container-column-text
+	href="<%= rowURL %>"
+	name="actuator.field.enabled"
+	align="center">
+	<% if (actuator.getEnabled()) { %>
+		<liferay-ui:icon src="/liferayofthings-core-portlet/img/common/icons/checked.png"
+			message='<%= LanguageUtil.get(pageContext, "actuator.enabled") %>'/>
+	<% } else { %>
+		<liferay-ui:icon src="/liferayofthings-core-portlet/img/common/icons/unchecked.png"
+			message='<%= LanguageUtil.get(pageContext, "actuator.disabled") %>'/>
+	<% } %>
+</liferay-ui:search-container-column-text>
+
+<liferay-ui:search-container-column-jsp
+	align="right"
+	path="/WEB-INF/jsp/portlet/lrotadmin/actuator_actions.jsp"
+/>
