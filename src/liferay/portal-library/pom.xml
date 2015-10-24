@@ -14,7 +14,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>portal-core</module>
+        <!--<module>portal-core</module>-->
         <module>portal-osgi</module>
     </modules>
 
