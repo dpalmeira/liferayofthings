@@ -16,7 +16,7 @@
     <name>Portlet Library</name>
 
     <modules>
-        <module>portlet-core</module>
+        <!--<module>portlet-core</module>-->
     </modules>
 
 </project>
